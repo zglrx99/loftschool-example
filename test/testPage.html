@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8"/>
+<body>
+<div><p class="class-28"><b>nm%40kD4%7D0</b> <b class="class-28 class-9-5">%225pP2</b></p></div>
+<script>
+"use strict"
+function collectDOMStat(root , obj = {
+		tags: {},
+		classes: {},
+		texts: 0
+	}) {
+
+	for (var node of root.childNodes){
+		//Флаги проверок существующих значений в объекте
+		var existTag = false;
+		var existClass = false;
+		console.log(obj);
+		if (node.nodeType ===1) {
+		//Поиск и формирование тэга
+			for (var tag in obj.tags){
+				if(node.nodeName == tag) {
+					tag.value = tag.value + 1;
+					existTag = true;
+					break;
+				}
+			}
+			if (existTag !== true && node.nodeName !== undefined && node.nodeType === 1) obj.tags[node.nodeName] = 1;
+		
+		//Поиск и формирование классов
+			for (var classNode of node.classList){
+				for (var className in obj.classes){
+					if(classNode.value == className) {
+						className.value++;
+						existClass = true;
+					}
+				}
+				if (existClass !== true && classNode !== undefined && node.nodeType === 1) obj.classes[classNode] = 1;
+				existClass = false;
+			}
+			if (node.childNodes.length !== 0) collectDOMStat(node, obj);
+		}
+		
+		if (node.nodeType === 3) obj.texts++;
+	}
+	return obj;
+}
+
+console.log(collectDOMStat(document.body.children[0]));
+</script>
+</body>
+</html>
