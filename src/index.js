@@ -158,7 +158,7 @@ function collectDOMStat(root , obj = {
 		//Поиск и формирование тэга
 			for (var tag in obj.tags){
 				if(node.nodeName == tag) {
-					tag.value = tag.value + 1;
+					obj.tags[tag]++;
 					existTag = true;
 					break;
 				}
@@ -169,7 +169,7 @@ function collectDOMStat(root , obj = {
 			for (var classNode of node.classList){
 				for (var className in obj.classes){
 					if(classNode.value == className) {
-						className.value++;
+						obj.classes[className]++;
 						existClass = true;
 					}
 				}
