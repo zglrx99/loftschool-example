@@ -154,7 +154,6 @@ function collectDOMStat(root , obj = {
 		//Флаги проверок существующих значений в объекте
 		var existTag = false;
 		var existClass = false;
-		console.log(obj);
 		if (node.nodeType ===1) {
 		//Поиск и формирование тэга
 			for (var tag in obj.tags){
@@ -218,6 +217,21 @@ function collectDOMStat(root , obj = {
    }
  */
 function observeChildNodes(where, fn) {
+	var observer = new MutationObserver(function(mutations){
+		mutations.forEach(function(mutation) {
+			let addedElements = [];
+			for (var i = 0; i < mutation.addedNodes.length; i++) {
+				addedElements.push(mutation.addedNodes[i]);
+			}
+			if (addedElements !== 0) fn({type: 'insert', nodes: addedElements});
+			let removedElements = [];
+			for (var i = 0; i < mutation.removedNodes.length; i++) {
+				removedElements.push(mutation.removedNodes[i]);
+			}
+			if (removedElements !== 0) fn({type: 'remove', nodes: removedElements});
+		});
+	});
+	observer.observe(where, {childList:true});
 }
 
 export {

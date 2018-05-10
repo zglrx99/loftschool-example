@@ -9,34 +9,11 @@ i ｢wdm｣: Compiled successfully.
 i ｢wdm｣: Compiling...
 i ｢wdm｣: 
 i ｢wdm｣: Compiled successfully.
-[32m09 05 2018 20:20:30.841:INFO [karma]: [39mKarma v2.0.2 server started at http://0.0.0.0:9876/
-[32m09 05 2018 20:20:30.843:INFO [launcher]: [39mLaunching browser ChromeHeadless with unlimited concurrency
-[32m09 05 2018 20:20:30.966:INFO [launcher]: [39mStarting browser ChromeHeadless
-[32m09 05 2018 20:20:32.070:INFO [HeadlessChrome 0.0.0 (Windows 10 0.0.0)]: [39mConnected on socket Rw5x3WNcm5YFhe5_AAAA with id 30506055
-LOG: <p class="class-28"><b>nm%40kD4%7D0</b> <b class="class-28 class-9-5">%225pP2</b></p>
-LOG: <p class="class-28"><b>nm%40kD4%7D0</b> <b class="class-28 class-9-5">%225pP2</b></p>
-LOG: <b>nm%40kD4%7D0</b>
-LOG: <b>nm%40kD4%7D0</b>
-LOG: nm%40kD4%7D0
-LOG: nm%40kD4%7D0
-LOG:  
-LOG:  
-LOG: <b class="class-28 class-9-5">%225pP2</b>
-LOG: <b class="class-28 class-9-5">%225pP2</b>
+[32m11 05 2018 01:19:05.506:INFO [karma]: [39mKarma v2.0.2 server started at http://0.0.0.0:9876/
+[32m11 05 2018 01:19:05.508:INFO [launcher]: [39mLaunching browser ChromeHeadless with unlimited concurrency
+[32m11 05 2018 01:19:05.626:INFO [launcher]: [39mStarting browser ChromeHeadless
+[32m11 05 2018 01:19:06.783:INFO [HeadlessChrome 0.0.0 (Windows 10 0.0.0)]: [39mConnected on socket fC6E9-Gav_5XNqHEAAAA with id 1421987
   ДЗ 4 - Работа с DOM
-    observeChildNodes
-      × должна вызывать fn при добавлении элементов в указанный элемент
-HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM observeChildNodes должна вызывать fn при добавлении элементов в указанный элемент FAILED
-	Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves.
-      × должна вызывать fn при добавлении множества элементов в указанный элемент
-HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM observeChildNodes должна вызывать fn при добавлении множества элементов в указанный элемент FAILED
-	Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves.
-      × должна вызывать fn при удалении элементов из указанного элемента
-HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM observeChildNodes должна вызывать fn при удалении элементов из указанного элемента FAILED
-	Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves.
-      × должна вызывать fn при удалении множества элементов из указанного элемента
-HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM observeChildNodes должна вызывать fn при удалении множества элементов из указанного элемента FAILED
-	Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves.
     createDivWithText
       √ должна возвращать элемент с тегом DIV
       √ должна добавлять текст в элемент
@@ -54,47 +31,32 @@ HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM observeChil
       × должна вернуть статистику по переданному дереву
 HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM collectDOMStat должна вернуть статистику по переданному дереву FAILED
 	TypeError: Cannot create property 'value' on string 'B'
-	    at collectDOMStat (webpack:///src/index.js:162:5 <- test/index.js:11978:68)
-	    at collectDOMStat (webpack:///src/index.js:180:37 <- test/index.js:12021:58)
+	    at collectDOMStat (webpack:///src/index.js:161:5 <- test/index.js:11978:69)
+	    at collectDOMStat (webpack:///src/index.js:179:37 <- test/index.js:12021:58)
 	    at Context.<anonymous> (webpack:///test/index.js:127:36 <- test/index.js:2238:48)
+    observeChildNodes
+      √ должна вызывать fn при добавлении элементов в указанный элемент
 
-Finished in 8.149 secs / 8.016 secs @ 20:20:40 GMT+0300 (RTZ 2 (зима))
+Finished in 0.115 secs / 0.009 secs @ 01:19:07 GMT+0300 (RTZ 2 (зима))
 
 SUMMARY:
-√ 7 tests completed
-× 5 tests failed
+√ 8 tests completed
+× 1 test failed
 
 FAILED TESTS:
   ДЗ 4 - Работа с DOM
-    observeChildNodes
-      × должна вызывать fn при добавлении элементов в указанный элемент
-        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
-      Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves.
-
-      × должна вызывать fn при добавлении множества элементов в указанный элемент
-        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
-      Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves.
-
-      × должна вызывать fn при удалении элементов из указанного элемента
-        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
-      Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves.
-
-      × должна вызывать fn при удалении множества элементов из указанного элемента
-        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
-      Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves.
-
     collectDOMStat
       × должна вернуть статистику по переданному дереву
         HeadlessChrome 0.0.0 (Windows 10 0.0.0)
       TypeError: Cannot create property 'value' on string 'B'
-          at collectDOMStat (webpack:///src/index.js:162:5 <- test/index.js:11978:68)
-          at collectDOMStat (webpack:///src/index.js:180:37 <- test/index.js:12021:58)
+          at collectDOMStat (webpack:///src/index.js:161:5 <- test/index.js:11978:69)
+          at collectDOMStat (webpack:///src/index.js:179:37 <- test/index.js:12021:58)
           at Context.<anonymous> (webpack:///test/index.js:127:36 <- test/index.js:2238:48)
 
 
 =============================== Coverage summary ===============================
-Statements   : 89.13% ( 41/46 )
-Branches     : 77.78% ( 21/27 )
-Functions    : 100% ( 8/8 )
-Lines        : 87.5% ( 35/40 )
+Statements   : 89.66% ( 52/58 )
+Branches     : 75.76% ( 25/33 )
+Functions    : 100% ( 10/10 )
+Lines        : 88% ( 44/50 )
 ================================================================================
