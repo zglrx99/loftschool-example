@@ -9,10 +9,10 @@ i ｢wdm｣: Compiled successfully.
 i ｢wdm｣: Compiling...
 i ｢wdm｣: 
 i ｢wdm｣: Compiled successfully.
-[32m11 05 2018 01:45:04.180:INFO [karma]: [39mKarma v2.0.2 server started at http://0.0.0.0:9876/
-[32m11 05 2018 01:45:04.182:INFO [launcher]: [39mLaunching browser ChromeHeadless with unlimited concurrency
-[32m11 05 2018 01:45:04.283:INFO [launcher]: [39mStarting browser ChromeHeadless
-[32m11 05 2018 01:45:06.703:INFO [HeadlessChrome 0.0.0 (Windows 10 0.0.0)]: [39mConnected on socket B1v8WMNNFDpHSOh9AAAA with id 14500433
+[32m14 05 2018 21:11:03.237:INFO [karma]: [39mKarma v2.0.2 server started at http://0.0.0.0:9876/
+[32m14 05 2018 21:11:03.240:INFO [launcher]: [39mLaunching browser ChromeHeadless with unlimited concurrency
+[32m14 05 2018 21:11:03.349:INFO [launcher]: [39mStarting browser ChromeHeadless
+[32m14 05 2018 21:11:05.415:INFO [HeadlessChrome 0.0.0 (Windows 10 0.0.0)]: [39mConnected on socket 89Pr0x6ZJGVLtmtjAAAA with id 16327658
   ДЗ 4 - Работа с DOM
     createDivWithText
       √ должна возвращать элемент с тегом DIV
@@ -28,31 +28,18 @@ i ｢wdm｣: Compiled successfully.
     deleteTextNodesRecursive
       √ должна рекурсивно удалить все текстовые узлы
     collectDOMStat
-      × должна вернуть статистику по переданному дереву
-HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM collectDOMStat должна вернуть статистику по переданному дереву FAILED
-	AssertionError: expected { Object (tags, classes, ...) } to deeply equal { Object (tags, classes, ...) }
-	    at Context.<anonymous> (webpack:///test/index.js:128:19 <- test/index.js:2239:26)
+      √ должна вернуть статистику по переданному дереву
     observeChildNodes
       √ должна вызывать fn при добавлении элементов в указанный элемент
 
-Finished in 0.115 secs / 0.015 secs @ 01:45:06 GMT+0300 (RTZ 2 (зима))
+Finished in 0.036 secs / 0.012 secs @ 21:11:05 GMT+0300 (RTZ 2 (зима))
 
 SUMMARY:
-√ 8 tests completed
-× 1 test failed
-
-FAILED TESTS:
-  ДЗ 4 - Работа с DOM
-    collectDOMStat
-      × должна вернуть статистику по переданному дереву
-        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
-      AssertionError: expected { Object (tags, classes, ...) } to deeply equal { Object (tags, classes, ...) }
-          at Context.<anonymous> (webpack:///test/index.js:128:19 <- test/index.js:2239:26)
-
+√ 9 tests completed
 
 =============================== Coverage summary ===============================
-Statements   : 94.83% ( 55/58 )
-Branches     : 81.82% ( 27/33 )
-Functions    : 100% ( 10/10 )
-Lines        : 94% ( 47/50 )
+Statements   : 97.73% ( 43/44 )
+Branches     : 83.33% ( 15/18 )
+Functions    : 100% ( 13/13 )
+Lines        : 97.5% ( 39/40 )
 ================================================================================

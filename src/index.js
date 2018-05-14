@@ -144,46 +144,29 @@ function deleteTextNodesRecursive(where) {
      texts: 3
    }
  */
-function collectDOMStat(root , obj = {
-		tags: {},
-		classes: {},
-		texts: 0
-	}) {
+function collectDOMStat(root) {
+    const obj = {
+        tags: {},
+        classes: {},
+        texts: 0
+    };
 
-	for (var node of root.childNodes){
-		//Флаги проверок существующих значений в объекте
-		var existTag = false;
-		var existClass = false;
-		if (node.nodeType ===1) {
-		//Поиск и формирование тэга
-			for (var tag in obj.tags){
-				if(node.nodeName == tag) {
-					obj.tags[tag]++;
-					existTag = true;
-					break;
-				}
-			}
-			if (existTag !== true && node.nodeName !== undefined && node.nodeType === 1) obj.tags[node.nodeName] = 1;
-		
-		//Поиск и формирование классов
-			for (var classNode of node.classList){
-				for (var className in obj.classes){
-					if(classNode.value == className) {
-						obj.classes[className]++;
-						existClass = true;
-					}
-				}
-				if (existClass !== true && classNode !== undefined && node.nodeType === 1) obj.classes[classNode] = 1;
-				existClass = false;
-			}
-			if (node.childNodes.length !== 0) collectDOMStat(node, obj);
-		}
-		
-		if (node.nodeType === 3) obj.texts++;
-	}
-	return obj;
+    (function getStat(node) {
+        node.childNodes.forEach((el) => {
+            if (el.nodeType === Node.TEXT_NODE) {
+                obj.texts++;
+            } else {
+                el.classList.forEach((item) => {
+                    obj.classes[item] ? obj.classes[item]++ : obj.classes[item] = 1;
+                });
+                typeof obj.tags[el.tagName] === 'undefined' ? obj.tags[el.tagName] = 1 : obj.tags[el.tagName]++;
+            }
+            getStat(el);
+        })
+    })(root);
+
+    return obj;
 }
-
 /*
  Задание 8 *:
 
