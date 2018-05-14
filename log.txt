@@ -7,52 +7,237 @@ START:
 i ｢wdm｣: 
 i ｢wdm｣: Compiled successfully.
 i ｢wdm｣: Compiling...
+i ｢wdm｣: wait until bundle finished: noop
+i ｢wdm｣: wait until bundle finished: noop
 i ｢wdm｣: 
 i ｢wdm｣: Compiled successfully.
-[32m11 05 2018 01:45:04.180:INFO [karma]: [39mKarma v2.0.2 server started at http://0.0.0.0:9876/
-[32m11 05 2018 01:45:04.182:INFO [launcher]: [39mLaunching browser ChromeHeadless with unlimited concurrency
-[32m11 05 2018 01:45:04.283:INFO [launcher]: [39mStarting browser ChromeHeadless
-[32m11 05 2018 01:45:06.703:INFO [HeadlessChrome 0.0.0 (Windows 10 0.0.0)]: [39mConnected on socket B1v8WMNNFDpHSOh9AAAA with id 14500433
-  ДЗ 4 - Работа с DOM
-    createDivWithText
-      √ должна возвращать элемент с тегом DIV
-      √ должна добавлять текст в элемент
-    prepend
-      √ должна добавлять элемент в начало
-    findAllPSiblings
-      √ должна возвращать массив с элементами, соседями которых являются P
-    findError
-      √ должна возвращать массив из текстового содержимого элементов
-    deleteTextNodes
-      √ должна удалить все текстовые узлы
-    deleteTextNodesRecursive
-      √ должна рекурсивно удалить все текстовые узлы
-    collectDOMStat
-      × должна вернуть статистику по переданному дереву
-HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM collectDOMStat должна вернуть статистику по переданному дереву FAILED
-	AssertionError: expected { Object (tags, classes, ...) } to deeply equal { Object (tags, classes, ...) }
-	    at Context.<anonymous> (webpack:///test/index.js:128:19 <- test/index.js:2239:26)
-    observeChildNodes
-      √ должна вызывать fn при добавлении элементов в указанный элемент
+[32m14 05 2018 20:16:40.736:INFO [karma]: [39mKarma v2.0.2 server started at http://0.0.0.0:9876/
+[32m14 05 2018 20:16:40.739:INFO [launcher]: [39mLaunching browser ChromeHeadless with unlimited concurrency
+[32m14 05 2018 20:16:40.743:INFO [launcher]: [39mStarting browser ChromeHeadless
+[32m14 05 2018 20:16:43.073:INFO [HeadlessChrome 0.0.0 (Windows 10 0.0.0)]: [39mConnected on socket uiFbiHz5zd3YWItfAAAA with id 72727732
+  ДЗ 5.1 - DOM Events
+    addListener
+      √ должна добавлять обработчик событий элемента
+    removeListener
+      √ должна удалять обработчик событий элемента
+    skipDefault
+      √ должна добавлять такой обработчик, который предотвращает действие по умолчанию
+    emulateClick
+      √ должна эмулировать клик по элементу
+    delegate
+      √ должна добавлять обработчик кликов, который реагирует только на клики по кнопкам
+    once
+      √ должна добавлять обработчик кликов, который сработает только один раз и удалится
+  ДЗ 5.2 - Div D&D
+    Функциональное тестирование
+      createDiv
+        × должна создавать div с произвольными размерами/позицией/цветом
+HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 5.2 - Div D&D Функциональное тестирование createDiv должна создавать div с произвольными размерами/позицией/цветом FAILED
+	AssertionError: не элемент
+	    at Context.<anonymous> (test/2%20-%20dnd.js:1817:38)
+    Интеграционное тестирование
+      √ на старнице должна быть кнопка с id addDiv
+      × создавать div с классом draggable-div при клике на кнопку
+HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 5.2 - Div D&D Интеграционное тестирование создавать div с классом draggable-div при клике на кнопку FAILED
+	Error: Uncaught TypeError: Failed to execute 'appendChild' on 'Node': parameter 1 is not of type 'Node'. (test/2%20-%20dnd.js:2801)
+	    at Context.<anonymous> (test/2%20-%20dnd.js:1839:26)
+      × создавать div с классом draggable-div при клике на кнопку 
+HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 5.2 - Div D&D Интеграционное тестирование создавать div с классом draggable-div при клике на кнопку FAILED
+	Error: Uncaught TypeError: Failed to execute 'appendChild' on 'Node': parameter 1 is not of type 'Node'. (test/2%20-%20dnd.js:2801)
+	    at Context.<anonymous> (test/2%20-%20dnd.js:1839:26)
+	AssertionError: 0 == 1
+	    at Context.<anonymous> (test/2%20-%20dnd.js:1842:30)
 
-Finished in 0.115 secs / 0.015 secs @ 01:45:06 GMT+0300 (RTZ 2 (зима))
+Finished in 0.124 secs / NaN secs @ 20:16:43 GMT+0300 (RTZ 2 (зима))
 
 SUMMARY:
-√ 8 tests completed
-× 1 test failed
+√ 7 tests completed
+× 3 tests failed
 
 FAILED TESTS:
-  ДЗ 4 - Работа с DOM
-    collectDOMStat
-      × должна вернуть статистику по переданному дереву
+  ДЗ 5.2 - Div D&D
+    Функциональное тестирование
+      createDiv
+        × должна создавать div с произвольными размерами/позицией/цветом
+          HeadlessChrome 0.0.0 (Windows 10 0.0.0)
+        AssertionError: не элемент
+            at Context.<anonymous> (test/2%20-%20dnd.js:1817:38)
+
+    Интеграционное тестирование
+      × создавать div с классом draggable-div при клике на кнопку
         HeadlessChrome 0.0.0 (Windows 10 0.0.0)
-      AssertionError: expected { Object (tags, classes, ...) } to deeply equal { Object (tags, classes, ...) }
-          at Context.<anonymous> (webpack:///test/index.js:128:19 <- test/index.js:2239:26)
+      Error: Uncaught TypeError: Failed to execute 'appendChild' on 'Node': parameter 1 is not of type 'Node'. (test/2%20-%20dnd.js:2801)
+          at Context.<anonymous> (test/2%20-%20dnd.js:1839:26)
+
+      × создавать div с классом draggable-div при клике на кнопку 
+        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
+      Error: Uncaught TypeError: Failed to execute 'appendChild' on 'Node': parameter 1 is not of type 'Node'. (test/2%20-%20dnd.js:2801)
+          at Context.<anonymous> (test/2%20-%20dnd.js:1839:26)
 
 
 =============================== Coverage summary ===============================
-Statements   : 94.83% ( 55/58 )
-Branches     : 81.82% ( 27/33 )
-Functions    : 100% ( 10/10 )
-Lines        : 94% ( 47/50 )
+Statements   : 94.44% ( 17/18 )
+Branches     : 100% ( 2/2 )
+Functions    : 90.91% ( 10/11 )
+Lines        : 94.12% ( 16/17 )
+================================================================================
+  ДЗ 4 - Работа с DOM
+    createDivWithText
+      × должна возвращать элемент с тегом DIV
+HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM createDivWithText должна возвращать элемент с тегом DIV FAILED
+	TypeError: (0 , _index.createDivWithText) is not a function
+	    at Context.<anonymous> (webpack:///test/index.js:28:43 <- test/index.js:2772:55)
+      × должна добавлять текст в элемент
+HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM createDivWithText должна добавлять текст в элемент FAILED
+	TypeError: (0 , _index.createDivWithText) is not a function
+	    at Context.<anonymous> (webpack:///test/index.js:36:43 <- test/index.js:2780:55)
+    prepend
+      × должна добавлять элемент в начало
+HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM prepend должна добавлять элемент в начало FAILED
+	TypeError: (0 , _index.prepend) is not a function
+	    at Context.<anonymous> (webpack:///test/index.js:52:20 <- test/index.js:2796:32)
+    findAllPSiblings
+      × должна возвращать массив с элементами, соседями которых являются P
+HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM findAllPSiblings должна возвращать массив с элементами, соседями которых являются P FAILED
+	TypeError: (0 , _index.findAllPSiblings) is not a function
+	    at Context.<anonymous> (webpack:///test/index.js:65:38 <- test/index.js:2809:50)
+    findError
+      × должна возвращать массив из текстового содержимого элементов
+HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM findError должна возвращать массив из текстового содержимого элементов FAILED
+	TypeError: (0 , _index.findError) is not a function
+	    at Context.<anonymous> (webpack:///test/index.js:80:31 <- test/index.js:2824:43)
+    deleteTextNodes
+      × должна удалить все текстовые узлы
+HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM deleteTextNodes должна удалить все текстовые узлы FAILED
+	TypeError: (0 , _index.deleteTextNodes) is not a function
+	    at Context.<anonymous> (webpack:///test/index.js:92:28 <- test/index.js:2836:40)
+    deleteTextNodesRecursive
+      × должна рекурсивно удалить все текстовые узлы
+HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM deleteTextNodesRecursive должна рекурсивно удалить все текстовые узлы FAILED
+	TypeError: (0 , _index.deleteTextNodesRecursive) is not a function
+	    at Context.<anonymous> (webpack:///test/index.js:106:37 <- test/index.js:2850:49)
+    collectDOMStat
+      × должна вернуть статистику по переданному дереву
+HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM collectDOMStat должна вернуть статистику по переданному дереву FAILED
+	TypeError: (0 , _index.collectDOMStat) is not a function
+	    at Context.<anonymous> (webpack:///test/index.js:127:36 <- test/index.js:2873:48)
+    observeChildNodes
+      × должна вызывать fn при добавлении элементов в указанный элемент
+HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM observeChildNodes должна вызывать fn при добавлении элементов в указанный элемент FAILED
+	TypeError: (0 , _index.observeChildNodes) is not a function
+	    at Context.<anonymous> (webpack:///test/index.js:151:30 <- test/index.js:2897:42)
+      × должна вызывать fn при добавлении множества элементов в указанный элемент
+HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM observeChildNodes должна вызывать fn при добавлении множества элементов в указанный элемент FAILED
+	TypeError: (0 , _index.observeChildNodes) is not a function
+	    at Context.<anonymous> (webpack:///test/index.js:182:30 <- test/index.js:2928:42)
+      × должна вызывать fn при удалении элементов из указанного элемента
+HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM observeChildNodes должна вызывать fn при удалении элементов из указанного элемента FAILED
+	TypeError: (0 , _index.observeChildNodes) is not a function
+	    at Context.<anonymous> (webpack:///test/index.js:207:30 <- test/index.js:2953:42)
+      × должна вызывать fn при удалении множества элементов из указанного элемента
+HeadlessChrome 0.0.0 (Windows 10 0.0.0) ДЗ 4 - Работа с DOM observeChildNodes должна вызывать fn при удалении множества элементов из указанного элемента FAILED
+	TypeError: (0 , _index.observeChildNodes) is not a function
+	    at Context.<anonymous> (webpack:///test/index.js:237:30 <- test/index.js:2983:42)
+
+Finished in 0.433 secs / NaN secs @ 20:16:43 GMT+0300 (RTZ 2 (зима))
+
+SUMMARY:
+√ 7 tests completed
+× 15 tests failed
+
+FAILED TESTS:
+  ДЗ 5.2 - Div D&D
+    Функциональное тестирование
+      createDiv
+        × должна создавать div с произвольными размерами/позицией/цветом
+          HeadlessChrome 0.0.0 (Windows 10 0.0.0)
+        AssertionError: не элемент
+            at Context.<anonymous> (test/2%20-%20dnd.js:1817:38)
+
+    Интеграционное тестирование
+      × создавать div с классом draggable-div при клике на кнопку
+        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
+      Error: Uncaught TypeError: Failed to execute 'appendChild' on 'Node': parameter 1 is not of type 'Node'. (test/2%20-%20dnd.js:2801)
+          at Context.<anonymous> (test/2%20-%20dnd.js:1839:26)
+
+      × создавать div с классом draggable-div при клике на кнопку 
+        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
+      Error: Uncaught TypeError: Failed to execute 'appendChild' on 'Node': parameter 1 is not of type 'Node'. (test/2%20-%20dnd.js:2801)
+          at Context.<anonymous> (test/2%20-%20dnd.js:1839:26)
+
+  ДЗ 4 - Работа с DOM
+    createDivWithText
+      × должна возвращать элемент с тегом DIV
+        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
+      TypeError: (0 , _index.createDivWithText) is not a function
+          at Context.<anonymous> (webpack:///test/index.js:28:43 <- test/index.js:2772:55)
+
+      × должна добавлять текст в элемент
+        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
+      TypeError: (0 , _index.createDivWithText) is not a function
+          at Context.<anonymous> (webpack:///test/index.js:36:43 <- test/index.js:2780:55)
+
+    prepend
+      × должна добавлять элемент в начало
+        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
+      TypeError: (0 , _index.prepend) is not a function
+          at Context.<anonymous> (webpack:///test/index.js:52:20 <- test/index.js:2796:32)
+
+    findAllPSiblings
+      × должна возвращать массив с элементами, соседями которых являются P
+        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
+      TypeError: (0 , _index.findAllPSiblings) is not a function
+          at Context.<anonymous> (webpack:///test/index.js:65:38 <- test/index.js:2809:50)
+
+    findError
+      × должна возвращать массив из текстового содержимого элементов
+        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
+      TypeError: (0 , _index.findError) is not a function
+          at Context.<anonymous> (webpack:///test/index.js:80:31 <- test/index.js:2824:43)
+
+    deleteTextNodes
+      × должна удалить все текстовые узлы
+        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
+      TypeError: (0 , _index.deleteTextNodes) is not a function
+          at Context.<anonymous> (webpack:///test/index.js:92:28 <- test/index.js:2836:40)
+
+    deleteTextNodesRecursive
+      × должна рекурсивно удалить все текстовые узлы
+        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
+      TypeError: (0 , _index.deleteTextNodesRecursive) is not a function
+          at Context.<anonymous> (webpack:///test/index.js:106:37 <- test/index.js:2850:49)
+
+    collectDOMStat
+      × должна вернуть статистику по переданному дереву
+        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
+      TypeError: (0 , _index.collectDOMStat) is not a function
+          at Context.<anonymous> (webpack:///test/index.js:127:36 <- test/index.js:2873:48)
+
+    observeChildNodes
+      × должна вызывать fn при добавлении элементов в указанный элемент
+        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
+      TypeError: (0 , _index.observeChildNodes) is not a function
+          at Context.<anonymous> (webpack:///test/index.js:151:30 <- test/index.js:2897:42)
+
+      × должна вызывать fn при добавлении множества элементов в указанный элемент
+        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
+      TypeError: (0 , _index.observeChildNodes) is not a function
+          at Context.<anonymous> (webpack:///test/index.js:182:30 <- test/index.js:2928:42)
+
+      × должна вызывать fn при удалении элементов из указанного элемента
+        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
+      TypeError: (0 , _index.observeChildNodes) is not a function
+          at Context.<anonymous> (webpack:///test/index.js:207:30 <- test/index.js:2953:42)
+
+      × должна вызывать fn при удалении множества элементов из указанного элемента
+        HeadlessChrome 0.0.0 (Windows 10 0.0.0)
+      TypeError: (0 , _index.observeChildNodes) is not a function
+          at Context.<anonymous> (webpack:///test/index.js:237:30 <- test/index.js:2983:42)
+
+
+=============================== Coverage summary ===============================
+Statements   : 94.44% ( 17/18 )
+Branches     : 100% ( 2/2 )
+Functions    : 90.91% ( 10/11 )
+Lines        : 94.12% ( 16/17 )
 ================================================================================
