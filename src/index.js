@@ -59,11 +59,11 @@ function emulateClick(target) {
    delegate(document.body, () => console.log('кликнули на button')) // добавит такой обработчик кликов для body, который будет вызывать указанную функцию только если кликнули на кнопку (элемент с тегом button)
  */
 function delegate(target, fn) {
-	for (const el of target.children){
-		if(el.tagName == 'BUTTON') {
-			el.addEventListener('click', fn);
+	target.addEventListener('click', e => {
+		if (e.target.nodeName === 'BUTTON') {
+			fn()
 		}
-	}
+	});
 }
 
 /*

@@ -27,6 +27,31 @@ const homeworkContainer = document.querySelector('#homework-container');
    homeworkContainer.appendChild(newDiv);
  */
 function createDiv() {
+	const element = document.createElement('div');
+    const elementWidth = Math.random() * 100;
+    const elementHeight = Math.random() * 100;
+
+    function getColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '';
+
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        };
+
+        return color;
+    }
+
+    element.className = 'draggable-div';
+    element.style.cssText = `
+	background-color: #${getColor()};
+	width: ${elementWidth}px;
+    height: ${elementHeight}px;
+    left: ${Math.random() * (homeworkContainer.offsetWidth - elementWidth)}px;
+    top: ${Math.random() * (homeworkContainer.offsetHeight - elementHeight)}px;
+    `;
+
+	return element;
 }
 
 /*
@@ -38,6 +63,26 @@ function createDiv() {
    addListeners(newDiv);
  */
 function addListeners(target) {
+	target.ondrag = () => {
+        return false;
+    };
+
+    target.onmousedown = (event) => {
+        moveAt(event);
+
+        function moveAt(e) {
+            event.target.style.left = `${e.pageX - event.target.offsetWidth / 2}px`;
+            event.target.style.top = `${e.pageY - event.target.offsetHeight / 2}px`;
+        }
+
+        document.onmousemove = (e) => {
+            moveAt(e);
+        };
+        event.target.onmouseup = () => {
+            document.onmousemove = null;
+            target.onmouseup = null;
+        }
+	}
 }
 
 let addDivButton = homeworkContainer.querySelector('#addDiv');
