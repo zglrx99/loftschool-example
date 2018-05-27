@@ -75,7 +75,7 @@ filterInput.addEventListener('keyup', function () {
   }
 });
 
-(function run() {
+(function go() {
   loadingBlock.style.display = 'block';
   loadTowns().then((value) => {
     cities = value;
@@ -88,7 +88,7 @@ filterInput.addEventListener('keyup', function () {
     errorBlock.innerHTML = 'Не удалось загрузить города<br><button>Повторить</button>';
     homeworkContainer.appendChild(errorBlock);
     homeworkContainer.querySelector('#error-block button').addEventListener('click', () => {
-      run();
+      go();
       homeworkContainer.removeChild(errorBlock);
     }, {
       once: true

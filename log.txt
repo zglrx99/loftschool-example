@@ -10,10 +10,10 @@ i ｢wdm｣: Compiling...
 i ｢wdm｣: wait until bundle finished: noop
 i ｢wdm｣: 
 i ｢wdm｣: Compiled successfully.
-[32m27 05 2018 15:44:17.073:INFO [karma]: [39mKarma v2.0.2 server started at http://0.0.0.0:9876/
-[32m27 05 2018 15:44:17.076:INFO [launcher]: [39mLaunching browser ChromeHeadless with unlimited concurrency
-[32m27 05 2018 15:44:17.147:INFO [launcher]: [39mStarting browser ChromeHeadless
-[32m27 05 2018 15:44:18.198:INFO [HeadlessChrome 0.0.0 (Windows 10 0.0.0)]: [39mConnected on socket 4TVlboE9Ny7nek5oAAAA with id 47777047
+[32m27 05 2018 15:48:49.033:INFO [karma]: [39mKarma v2.0.2 server started at http://0.0.0.0:9876/
+[32m27 05 2018 15:48:49.035:INFO [launcher]: [39mLaunching browser ChromeHeadless with unlimited concurrency
+[32m27 05 2018 15:48:49.105:INFO [launcher]: [39mStarting browser ChromeHeadless
+[32m27 05 2018 15:48:50.163:INFO [HeadlessChrome 0.0.0 (Windows 10 0.0.0)]: [39mConnected on socket oAGeMGVgnKown36SAAAA with id 16508668
   ДЗ 6.1 - Асинхронность и работа с сетью
     delayPromise
       √ Promise должен быть resolved через указанное количество секунд
@@ -33,7 +33,7 @@ i ｢wdm｣: Compiled successfully.
       √ результат должен быть пуст, если в поле пусто
       √ должна возвращать Promise
 
-Finished in 3.078 secs / 3.027 secs @ 15:44:21 GMT+0300 (RTZ 2 (зима))
+Finished in 3.075 secs / 3.027 secs @ 15:48:53 GMT+0300 (RTZ 2 (зима))
 
 SUMMARY:
 √ 10 tests completed
