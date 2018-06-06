@@ -48,6 +48,8 @@ filterNameInput.addEventListener('keyup', () => {
   displayCookies();
 });
 
+var cookies = null;
+
 addButton.addEventListener('click', () => {
   // здесь можно обработать нажатие на кнопку "добавить cookie"
   const key = addNameInput.value,
@@ -56,6 +58,7 @@ addButton.addEventListener('click', () => {
   expires = new Date();
   expires.setDate(expires.getDate() + 1);
   document.cookie = `${key}=${value};expires=${expires}`;
+  cookies.push(`${key}=${value};expires=${expires}`);
   displayCookies();
 });
 
@@ -68,12 +71,17 @@ listTable.addEventListener('click', e => {
     date.setDate(date.getDate() - 1);
     document.cookie = `${key}='REMOVED';expires=${date}`;
     tr.parentNode.removeChild(tr);
+    for (let i; i<cookies.length; i++) {
+      if (cookies[i] == `${key}='REMOVED';expires=${date}`) {
+        cookies.splice(i, 1);
+      }
+    }
   }
 });
 
 function displayCookies() {
   // Show me the cookies!
-  let cookies = document.cookie.split('; ');
+  let cookies = getCookies();
   const currentFilterWord = filterNameInput.value;
   if (currentFilterWord.length !== 0) {
     let isMatching = function (full, chunk) {
@@ -100,5 +108,12 @@ function displayCookies() {
     listTable.appendChild(tr);
   });
 };
+
+function getCookies() {
+  if (cookies == null) {
+    cookies = document.cookie.split('; ');
+  }
+  return cookies;
+}
 
 displayCookies();
