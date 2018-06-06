@@ -9,10 +9,12 @@ i ｢wdm｣: Compiled successfully.
 i ｢wdm｣: Compiling...
 i ｢wdm｣: 
 i ｢wdm｣: Compiled successfully.
-[32m01 06 2018 05:02:50.219:INFO [karma]: [39mKarma v2.0.2 server started at http://0.0.0.0:9876/
-[32m01 06 2018 05:02:50.221:INFO [launcher]: [39mLaunching browser ChromeHeadless with unlimited concurrency
-[32m01 06 2018 05:02:50.225:INFO [launcher]: [39mStarting browser ChromeHeadless
-[32m01 06 2018 05:02:51.227:INFO [HeadlessChrome 0.0.0 (Windows 10 0.0.0)]: [39mConnected on socket LYpW5Bnez8STrN_PAAAA with id 41208162
+[32m06 06 2018 22:08:55.397:INFO [karma]: [39mKarma v2.0.2 server started at http://0.0.0.0:9876/
+[32m06 06 2018 22:08:55.407:INFO [launcher]: [39mLaunching browser ChromeHeadless with unlimited concurrency
+[32m06 06 2018 22:08:55.412:INFO [launcher]: [39mStarting browser ChromeHeadless
+[33m06 06 2018 22:09:15.413:WARN [launcher]: [39mChromeHeadless have not captured in 20000 ms, killing.
+[32m06 06 2018 22:09:15.496:INFO [launcher]: [39mTrying to start ChromeHeadless again (1/2).
+[32m06 06 2018 22:09:18.263:INFO [HeadlessChrome 0.0.0 (Windows 10 0.0.0)]: [39mConnected on socket 4ABl6BXOHqJ2xEAoAAAA with id 56108030
   ДЗ 7.2 - Cookie editor
     Интеграционное тестирование
       √ на старнице должны быть элементы с нужными id
@@ -27,7 +29,7 @@ i ｢wdm｣: Compiled successfully.
         √ удалить cookie из табилицы, если ее значение перестало соответствовать фильтр
         √ выводить все cookie, если фильтр не задан
 
-Finished in 0.052 secs / 0.021 secs @ 05:02:51 GMT+0300 (RTZ 2 (зима))
+Finished in 0.439 secs / 0.159 secs @ 22:09:19 GMT+0300 (RTZ 2 (зима))
 
 SUMMARY:
 √ 10 tests completed
