@@ -52,13 +52,8 @@ var cookies = null;
 
 addButton.addEventListener('click', () => {
   // здесь можно обработать нажатие на кнопку "добавить cookie"
-  const key = addNameInput.value,
-    value = addValueInput.value;
-  let expires;
-  expires = new Date();
-  expires.setDate(expires.getDate() + 1);
-  document.cookie = `${key}=${value};expires=${expires}`;
-  cookies.push(`${key}=${value};expires=${expires}`);
+  document.cookie = `${addNameInput.value}=${addValueInput.value};expires=Tue, 19 Jan 2038 03:14:07 GMT`;
+  getCookies();
   displayCookies();
 });
 
@@ -66,16 +61,10 @@ listTable.addEventListener('click', e => {
   //Делегирование удаления кукиса
   if (e.target.nodeName === 'BUTTON') {
     const key = e.target.dataset.key,
-      tr = listTable.querySelector(`tr[data-key="${key}"]`);
-    const date = new Date();
-    date.setDate(date.getDate() - 1);
-    document.cookie = `${key}='REMOVED';expires=${date}`;
+    tr = listTable.querySelector(`tr[data-key="${key}"]`);
+    document.cookie = `${e.target.dataset.key}='REMOVED';expires=Thu, 01 Jan 1970 00:00:01 GMT`;
     tr.parentNode.removeChild(tr);
-    for (let i; i<cookies.length; i++) {
-      if (cookies[i] == `${key}='REMOVED';expires=${date}`) {
-        cookies.splice(i, 1);
-      }
-    }
+    getCookies();
   }
 });
 
@@ -110,9 +99,7 @@ function displayCookies() {
 };
 
 function getCookies() {
-  if (cookies == null) {
-    cookies = document.cookie.split('; ');
-  }
+  cookies = document.cookie.split('; ');
   return cookies;
 }
 
